@@ -1,0 +1,57 @@
+/* Basic list styling */
+.item-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Pseudo-class: Hover */
+.item-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Pseudo-class: First-child */
+.item-list li:first-child {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Pseudo-class: nth-child */
+.item-list li:nth-child(2) {
+    background-color: #e0e0e0;
+}
+.item-list li:nth-child(3) {
+    background-color: #961414;
+}
+
+.article {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+/* Pseudo-element: Before */
+.article h2::before {
+    content: '📄'; /* Decorative icon */
+    margin-right: 10px;
+}
+
+/* Pseudo-element: After */
+.article p::after {
+    content: ' Read more...';
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Pseudo-element: First-line */
+.article p::first-line {
+    font-size: 1.2em;
+    color: #333;
+}

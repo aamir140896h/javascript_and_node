@@ -1,0 +1,55 @@
+/* Apply some global styles for better visibility */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+/* Styles for the product card */
+.product-card {
+    width: 300px;                  /* Content width */
+    border: 1px solid #ddd;        /* Border around the padding */
+    border-radius: 10px;           /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+    overflow: hidden;              /* Hide overflow to keep border-radius */
+    background-color: #fff;        /* Background color for the card */
+    margin: 20px;                  /* Margin outside the border */
+}
+
+/* Styles for the product image */
+.product-image {
+    width: 100%;                    /* Full width of the card */
+    height: auto;                   /* Maintain aspect ratio */
+    align-items: center;
+    align-content: center;
+}
+
+/* Styles for the product info section */
+.product-info {
+    padding: 15px;                 /* Padding inside the card */
+}
+
+/* Styles for the product title */
+.product-title {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;            /* Margin between title and description */
+}
+
+/* Styles for the product description */
+.product-description {
+    font-size: 1em;
+    margin: 0 0 15px 0;            /* Margin between description and price */
+}
+
+/* Styles for the product price */
+.product-price {
+    font-size: 1.2em;
+    color: #e74c3c;                 /* Color for the price */
+    font-weight: bold;
+    margin: 0;                      /* No margin for price */
+}

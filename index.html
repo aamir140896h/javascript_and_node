@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Webpage Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        article {
+            margin-bottom: 1rem;
+        }
+
+        section {
+            margin-bottom: 1rem;
+        }
+
+        h1,
+        h2 {
+            margin: 0.5rem 0;
+        }
+
+        p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <a href="#home" style="color: white; text-decoration: none; margin: 0 1rem;">Home</a>
+            <a href="#about" style="color: white; text-decoration: none; margin: 0 1rem;">About</a>
+            <a href="#contact" style="color: white; text-decoration: none; margin: 0 1rem;">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to My Website</h2>
+            <p>This is a brief introduction to what my website is about.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <article>
+                <h3>Our Mission</h3>
+                <p>Our mission is to provide excellent services to our customers.</p>
+            </article>
+            <article>
+                <h3>Our Team</h3>
+                <p>We have a dedicated team of professionals who are passionate about their work.</p>
+            </article>
+            <audio controls>
+                <source src="audio-file.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <video controls width="640" height="360">
+                <source
+                    src="D:\aamir\Video\The Chronicles of Riddick 2004 BRRip 720p [Dual Audio][Eng Hindi]Current_HD.mkv"
+                    type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/xgiiwsJ7mOk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out to us through our contact form.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+
+<!-- https://github.com/lydiahallie?tab=overview&from=2024-11-01&to=2024-11-17 -->
