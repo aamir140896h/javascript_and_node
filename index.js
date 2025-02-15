@@ -171,12 +171,12 @@ const arr = [1, 2, 2, 3, 3, 3, 4, 1, 5, 2];
 
 // console.log(median(num1, num2));
 
-function longestPalindrome(s) {
-  for (let i = 0; i < s.length; i++) {
-    console.log(s[i]);
-  }
-}
+// function longestPalindrome(s) {
+//   for (let i = 0; i < s.length; i++) {
+//     console.log(s[i]);
+//   }
+// }
 
-const s = "babad";
+// const s = "babad";
 
-console.log(longestPalindrome(s));
+// console.log(longestPalindrome(s));
