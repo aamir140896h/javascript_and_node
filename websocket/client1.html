@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #chat {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+            margin: 10px auto;
+            padding: 5px;
+        }
+
+        #message {
+            width: 250px;
+            padding: 5px;
+        }
+
+        #send {
+            padding: 5px 10px;
+        }
+
+        .system {
+            color: gray;
+            font-style: italic;
+        }
+
+        .user {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>WebSocket Chat</h2>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <button id="setName">Join Chat</button>
+    <br><br>
+    <div id="chat"></div>
+    <input type="text" id="message" placeholder="Type your message..." disabled>
+    <button id="send" disabled>Send</button>
+
+    <script>
+        const ws = new WebSocket("ws://localhost:8080");
+        const chatBox = document.getElementById("chat");
+        const messageInput = document.getElementById("message");
+        const sendButton = document.getElementById("send");
+        const usernameInput = document.getElementById("username");
+        const setNameButton = document.getElementById("setName");
+
+        let username = "";
+
+        ws.onopen = () => {
+            console.log("Connected to the server");
+        };
+
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            const messageElement = document.createElement("p");
+
+            if (data.sender === "Server") {
+                messageElement.classList.add('system')
+            } else {
+                messageElement.classList.add("user");
+            }
+
+            messageElement.innerHTML = `<strong>${data.sender}:</strong> ${data.message}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        };
+
+        ws.onclose = () => {
+            chatBox.innerHTML += "<p class='system'><em>Disconnected from chat</em></p>";
+        };
+
+        setNameButton.onclick = () => {
+            username = usernameInput.value.trim();
+            if (username) {
+                ws.send(JSON.stringify({ type: "setName", name: username }));
+                usernameInput.disabled = true;
+                setNameButton.disabled = true;
+                messageInput.disabled = false;
+                sendButton.disabled = false;
+            }
+        };
+
+        sendButton.onclick = () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                ws.send(JSON.stringify({ type: "message", message }));
+                messageInput.value = "";
+            }
+        };
+    </script>
+
+</body>
+
+</html>
