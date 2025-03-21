@@ -8,3 +8,5 @@ const isPrimeNUmber = (num) => {
   return true;
 };
 console.log(isPrimeNUmber(10));
+console.log(isPrimeNUmber(7));
+console.log(isPrimeNUmber(11));
