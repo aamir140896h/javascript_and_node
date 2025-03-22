@@ -1,4 +1,4 @@
-// ?find the max sum subarray
+// ? find the max sum subarray
 
 const mxSubArray = (arr) => {
   let maxSum = -Infinity;
