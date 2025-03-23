@@ -21,6 +21,7 @@ const mxSubArray = (arr) => {
     if (currentSum < 0) {
       currentSum = 0;
       tempStart = i + 1;
+      console.log(currentSum, "currentsum");
     }
   }
 
