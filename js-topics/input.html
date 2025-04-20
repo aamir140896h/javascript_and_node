@@ -10,6 +10,14 @@
 
 <body>
     <input type="text" id="searchBox" placeholder="Type something..." />
+
+    <form id="myForm">
+        <input type="text" name="username" />
+        <button type="submit" name="action" value="save">Save</button>
+        <button type="submit" name="action" value="delete">Delete</button>
+    </form>
+
+
     <script>
 
         function debounce(func, delay) {
@@ -27,6 +35,13 @@
         document.getElementById('searchBox').addEventListener('input', (e) => {
             handleSerach(e.target.value);
         })
+
+
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const clickedButton = e.submitter; // HTML5 way to get the clicked button
+            console.log("Clicked:", clickedButton.name, clickedButton.value);
+        });
     </script>
 
 </body>

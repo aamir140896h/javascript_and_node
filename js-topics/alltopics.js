@@ -290,7 +290,7 @@
 // getData();
 
 // ? 5. fetch API
-const response = fetch("https://api.example.com/data");
+// const response = fetch("https://api.example.com/data");
 // .then((res) => res.json())
 // .then((data) => console.log(data))
 // .catch((err) => {
@@ -299,3 +299,18 @@ const response = fetch("https://api.example.com/data");
 
 // const data = await response.json();
 // console.log(data);
+
+// ? Generator Function
+
+// function* greet() {
+//   yield "Hello";
+//   yield "I am Ammir";
+//   yield "how are you";
+// }
+
+// const gen = greet();
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+
