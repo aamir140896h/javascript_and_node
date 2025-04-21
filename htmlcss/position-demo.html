@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Position Demo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            padding: 50px;
+            border-bottom: 2px dashed #ccc;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* 1. Static */
+        .static-box {
+            position: static;
+            background: steelblue;
+        }
+
+        /* 2. Relative */
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background: darkorange;
+        }
+
+        /* 3. Absolute */
+        .absolute-container {
+            position: relative;
+            height: 150px;
+            background: #f0f0f0;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: crimson;
+        }
+
+        /* 4. Fixed */
+        .fixed-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: seagreen;
+            z-index: 999;
+        }
+
+        /* 5. Sticky */
+        .sticky-container {
+            height: 200vh;
+            background: #eee;
+            padding: 20px;
+        }
+
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section">
+        <h2>1. Static (default)</h2>
+        <div class="box static-box">Static Box</div>
+    </div>
+
+    <div class="section">
+        <h2>2. Relative</h2>
+        <div class="box relative-box">Relative Box</div>
+    </div>
+
+    <div class="section">
+        <h2>3. Absolute (inside relative container)</h2>
+        <div class="absolute-container">
+            <div class="box absolute-box">Absolute Box</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Fixed</h2>
+        <div class="box fixed-box">Fixed Box</div>
+        <p>Scroll the page to see how the fixed box stays in place.</p>
+    </div>
+
+    <div class="section sticky-container">
+        <h2>5. Sticky</h2>
+        <div class="box sticky-box">Sticky Box</div>
+        <p>Scroll down to watch this box "stick" to the top.</p>
+    </div>
+
+</body>
+
+</html>

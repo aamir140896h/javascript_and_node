@@ -31,6 +31,7 @@
         }
         const handleSerach = debounce((query) => {
             console.log('serch query', query);
+            console.log('serch query', query);
         }, 500)
         document.getElementById('searchBox').addEventListener('input', (e) => {
             handleSerach(e.target.value);
