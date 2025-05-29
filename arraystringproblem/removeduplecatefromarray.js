@@ -30,7 +30,7 @@ const removeduplecatefromarray = (arr) => {
   return result;
 };
 
-// let arr = [4, 3, 4, 1, 2, 3, 5, 2];
-let arr = [1, 1, 2, 2, 3, 4, 4, 5];
+let arr = [4, 3, 4, 1, 2, 3, 5, 2];
+// let arr = [1, 1, 2, 2, 3, 4, 4, 5];
 const uniqueElement = removeduplecatefromarray(arr);
 console.log(uniqueElement);

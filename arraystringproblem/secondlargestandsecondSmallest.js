@@ -11,7 +11,6 @@ const secondlargestandsecondSmallest = (arr) => {
       console.log(secondLargest);
     } else if (arr[i] > secondLargest && arr[i] !== largest) {
       console.log(secondLargest);
-
       secondLargest = arr[i];
       console.log(secondLargest);
     }

@@ -200,7 +200,7 @@
 
 // ? call Apply and bind ();
 
-// ! call : the call method invoke a function immediately with the specified the value and indivisual arg
+// ! call : the call method invoke a function immediately with the specified this value and indivisual arg
 // const person = {
 //   fullMame() {
 //     return `Hi I am ${this.firstName} ${this.lastName}`;
@@ -210,7 +210,7 @@
 
 // console.log(person.fullMame.call(user));
 
-// ! apply  : the call method invoke a function immediately with the specified this value and array arg
+// ! apply  : the apply method invoke a function immediately with the specified this value and array arg
 
 // const mathUtility = {
 //   sum(a, b, c) {
@@ -221,7 +221,7 @@
 // const user = { name: "Aamir" };
 // console.log(mathUtility.sum.apply(user, [1, 2, 3]));
 
-// ! bind(): the bine method retuns a new function with the specified this value and opptionally preset args, it does not call the function immediatly
+// ! bind(): the bind method retuns a new function with the specified this value and opptionally preset args, it does not call the function immediatly
 
 // const notifier = {
 //   notify(message) {
@@ -314,3 +314,163 @@
 // console.log(gen.next());
 // console.log(gen.next());
 
+// const user = { name: "Aamir", age: 25 };
+// console.log(user);
+
+// const copyUser = { ...user };
+// copyUser.name = "Minhaj";
+// console.log(copyUser);
+
+// const str = "Aamir";
+// const spreadStr = [...str];
+// console.log(spreadStr);
+
+// const words = ["a", "b", "a", "c", "b", "a"];
+// const countMap = new Map();
+
+// for (let word of words) {
+//   countMap.set(word, (countMap.get(word) || 0) + 1);
+// }
+
+// console.log(countMap);
+
+// ///////////////////////////////////////////////////////////////////////////////
+
+// function makeCounter() {
+//   let count = 0;
+//   return function () {
+//     return ++count;
+//   };
+// }
+
+// const counter1 = makeCounter();
+// const counter2 = makeCounter();
+
+// console.log(counter1()); // 1 ?
+// console.log(counter1()); //  2 ?
+// console.log(counter2()); // 1
+
+// const obj = {
+//   name: "Aamir",
+//   greet: () => {
+//     console.log(`Hi, ${this.name}`);
+//   },
+// };
+
+// obj.greet();
+
+// async function test() {
+//   return 42;
+// }
+
+// test().then(console.log);
+
+// const original = { user: { name: "Aamir" } };
+// const copy = { ...original };
+
+// copy.user.name = "Changed";
+
+// console.log(original.user.name);
+
+// console.log([] == false); // ?
+// console.log([] === false);
+
+// greet();
+
+// function greet() {
+//   console.log("Hello!");
+// }
+
+// let result = "" || 0 || null || "JS" || false;
+// console.log(result);
+
+// ? HOF
+
+// function greatUser(name) {
+//   return `hello ${name}`;
+// }
+
+// function processUser(greatFn, name) {
+//   return greatFn(name);
+// }
+// console.log(processUser(greatUser, "Aamir"));
+
+// function outerFunc(num1) {
+//   return function (num2) {
+//     return num1 * num2;
+//   };
+// }
+
+// const result = outerFunc(2);
+// console.log(result(5));
+
+// ? costom map function
+
+// Array.prototype.myMap = function (callback) {
+//   const result = [];
+
+//   for (let i = 0; i < this.length; i++) {
+//     result.push(callback(this[i], i, this));
+//   }
+//   return result;
+// };
+
+// const array = [1, 2, 3, 4, 5];
+
+// const newArray = array.myMap((num) => num * 2);
+// console.log(newArray);
+
+// ? costom filter function
+
+// Array.prototype.myFilter = function (callback) {
+//   const result = [];
+
+//   for (let i = 0; i < this.length; i++) {
+//     if (callback(this[i], i, this)) {
+//       result.push(this[i]);
+//     }
+//   }
+
+//   return result;
+// };
+// const array = [1, 2, 3, 4, 5];
+// const evenNumber = array.myFilter((num) => {
+//   return num % 2 === 0;
+// });
+
+// console.log(evenNumber);
+
+// ? costom reducer
+
+// Array.prototype.myReducer = function (callback, initialValue) {
+//   if (typeof callback !== "function") {
+//     throw new TypeError(callback, "is not a function");
+//   }
+
+//   let arr = this;
+//   let accumulator; // This will hold the result as you reduce over the array
+//   let startIndex; // This tracks where to start the loop, If initialValue is given → start from index 0, If not → start from index 1, because arr[0] is used as the initial accumulator.
+//   if (initialValue !== undefined) {
+//     accumulator = initialValue;
+//     startIndex = 0;
+//   } else {
+//     if (arr.length === 0) {
+//       throw new TypeError("reduce of empty array with no initial values");
+//     }
+//     accumulator = arr[0];
+//     startIndex = 1;
+//   }
+
+//   for (let i = startIndex; i < arr.length; i++) {
+//     accumulator = callback(accumulator, arr[i], i, arr);
+//   }
+//   return accumulator;
+// };
+
+// const array = [1, 2, 3, 4, 5];
+
+// const reduceFunction = array.myReducer((acc, curr) => {
+//   return acc + curr;
+// }, 0);
+
+// console.log(reduceFunction);
