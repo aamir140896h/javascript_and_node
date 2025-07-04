@@ -474,3 +474,107 @@
 // }, 0);
 
 // console.log(reduceFunction);
+
+// HOF
+
+// function higherOrderFunction(func) {
+//   return function (...args) {
+//     console.log("input", args);
+//     const result = func(...args);
+//     console.log("otput", result);
+//     return result;
+//   };
+// }
+
+// function multiply(a, b) {
+//   return a * b;
+// }
+
+// const loggedMultiply = higherOrderFunction(multiply);
+// loggedMultiply(4, 5);
+
+// Shallow copy
+
+// const original = {
+//   name: "Aamir",
+//   address: { city: "Bangalore" },
+// };
+
+// const shallowCopy = { ...original };
+// console.log(original, "504");
+// console.log(shallowCopy, "505");
+
+// shallowCopy.name = "Ali";
+// shallowCopy.address.city = "Mumbai";
+
+// console.log(original, "original");
+// console.log(shallowCopy, "shallowCopy");
+
+// deep copy
+
+// const original = {
+//   name: "Aamir",
+//   address: { city: "Bangalore" },
+// };
+
+// const deepCopy = JSON.parse(JSON.stringify(original));
+// deepCopy.name = "Ali";
+// deepCopy.address.city = "Mumbai";
+
+// console.log(original.name);
+// console.log(original.address.city);
+// console.log(original, "original");
+// console.log(deepCopy, "deepCopy");
+
+// 18008969999
+
+// currying Function
+
+// function multiply(a) {
+//   return function (b) {
+//     return function (c) {
+//       return a * b * c;
+//     };
+//   };
+// }
+
+// const result = multiply(2)(3)(4);
+// console.log(result);
+
+// HOF
+
+// function double(func) {
+//   return function (x) {
+//     return func(x) * 2;
+//   };
+// }
+
+// const squre = (x) => x * x;
+// const doubleSqure = double(squre);
+// console.log(doubleSqure(3));
+
+// generator function
+
+// const squre = (x) => x * x;
+// const add = (x) => x + x;
+// function* gen() {
+//   yield squre(3);
+//   yield add(2);
+// }
+
+// const genfunc = gen();
+// console.log(genfunc.next());
+// console.log(genfunc.next());
+// console.log(genfunc.next());
+
+// call by Value
+
+let a = 10;
+
+const modify = (a) => {
+  a = a + 5;
+  console.log("modified a", a);
+};
+
+modify(a);
+console.log("original a", a);
