@@ -569,12 +569,81 @@
 
 // call by Value
 
-let a = 10;
+// let a = 10;
 
-const modify = (a) => {
-  a = a + 5;
-  console.log("modified a", a);
-};
+// const modify = (a) => {
+//   a = a + 5;
+//   console.log("modified a", a);
+// };
 
-modify(a);
-console.log("original a", a);
+// modify(a);
+// console.log("original a", a);
+
+// function higherOrderFunction(func) {
+//   return function (...arg) {
+//     console.log(...arg);
+//     const result = func(...arg);
+//     console.log(result);
+//     return result;
+//   };
+// }
+
+// function multiply(a, b) {
+//   return a * b;
+// }
+
+// const multiplyLogger = higherOrderFunction(multiply);
+// multiplyLogger(4, 5);
+
+// closure;
+
+// function outerFunc() {
+//   let count = 0;
+//   return function inner() {
+//     return ++count;
+//   };
+// }
+
+// const closureResult = outerFunc();
+// console.log(closureResult());
+// console.log(closureResult());
+// console.log(closureResult());
+
+// const obj = {
+//   name: "Aamir",
+//   greet: function () {
+//     console.log("Hello", this.name);
+//   },
+//   greetArrow: () => {
+//     console.log("Hello", this.name); // `this` doesn't point to obj
+//   },
+// };
+// obj.greet();
+// obj.greetArrow();
+
+// const number = [1, 2, 3, 4];
+// const anotherNumber = number;
+// anotherNumber.push(5);
+// console.log(number, anotherNumber);
+
+// function sayHello(greeting) {
+//   console.log(greeting + " " + this.name);
+// }
+
+// const person = { name: "Aamir" };
+
+// sayHello.call(person, "Hello");
+
+// sayHello.apply(person, ["Hello"]);
+
+// const bindReturn = sayHello.bind(person);
+// bindReturn("Hello");
+
+function multiplyBy(factor) {
+  return function (num) {
+    return num * factor;
+  };
+}
+
+const double = multiplyBy(2);
+console.log(double(5));

@@ -1,5 +1,6 @@
 import fs from "fs";
 
+import EventEmitter from "events";
 // const readableStream = fs.createReadStream("example.txt", {
 //   encoding: "utf8",
 // });
@@ -47,3 +48,10 @@ import fs from "fs";
 //   if (err) throw err;
 //   console.log(data);
 // });
+
+// const events = new EventEmitter();
+// events.on("orderPlaced", (oredrId) => {
+//   console.log("Order Recieved", oredrId);
+// });
+
+// events.emit("orderPlaced", "odr1234");

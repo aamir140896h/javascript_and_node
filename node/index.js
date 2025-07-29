@@ -148,17 +148,78 @@
 
 // find duplicate
 
-function findDuplicate(arr) {
-  const result = [];
-  const seen = {};
+// function findDuplicate(arr) {
+//   const result = [];
+//   const seen = {};
 
-  for (let num of arr) {
-    if (!seen[num]) {
-      seen[num] = true;
-      result.push(num);
-    }
-  }
-  return result;
+//   for (let num of arr) {
+//     if (!seen[num]) {
+//       seen[num] = true;
+//       result.push(num);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(findDuplicate([1, 2, 2, 3, 1]));
+
+// HOF
+
+// function greetFuncHOF(greetfunc) {
+//   return function (name) {
+//     greetfunc(name);
+//   };
+// }
+
+// function sayHi(name) {
+//   console.log(`Hi ${name}`);
+// }
+
+// const enhancedResult = greetFuncHOF(sayHi);
+// enhancedResult("Aamir");
+
+// Shallow Copy
+// const original = {
+//   name: "Aamir",
+//   address: { city: "Bangalore" },
+// };
+
+// const copy = { ...original };
+// copy.address.city = "Mumbai";
+// console.log(original, copy);
+
+// const deepCopy = JSON.parse(JSON.stringify(original));
+// deepCopy.address.city = "Mumbai";
+// console.log(original, deepCopy);
+
+// call apply and bind
+// const person = {
+//   fullName: function (city, country) {
+//     return (
+//       this.firstName + " " + this.lastName + " from " + city + " ," + country
+//     );
+//   },
+// };
+
+// const person1 = {
+//   firstName: "Aamir",
+//   lastName: "Hussain",
+// };
+
+// console.log(person.fullName.call(person1, "Dehri", "India"));
+// console.log(person.fullName.apply(person1, ["Dehri", "India"]));
+
+// const bindFunc = person.fullName.bind(person1, "Dehri", "India");
+// console.log(bindFunc());
+
+function outer() {
+  let count = 0;
+  return function inner() {
+    return ++count;
+  };
 }
 
-console.log(findDuplicate([1, 2, 2, 3, 1]));
+const closureFunction = outer();
+console.log(closureFunction());
+console.log(closureFunction());
+console.log(closureFunction());
